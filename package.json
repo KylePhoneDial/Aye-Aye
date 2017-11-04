@@ -1,0 +1,26 @@
+{
+  "name": "aye-aye",
+  "version": "0.0.1",
+  "description": "Aye-Aye is a bare bones chat app kept within your terminal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KylePhoneDial/Aye-Aye.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Kyle Brantley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KylePhoneDial/Aye-Aye/issues"
+  },
+  "homepage": "https://github.com/KylePhoneDial/Aye-Aye#readme",
+  "dependencies": {
+    "moment": "^2.19.1",
+    "socket.io": "^2.0.4"
+  }
+}
