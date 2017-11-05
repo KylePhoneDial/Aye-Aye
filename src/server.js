@@ -1,8 +1,8 @@
 var socketio = require('socket.io');
-var config = require('./config');
+var config = require('./serverConfig');
 var moment = require('moment');
 
-var io = socketio.listen(config.port);
+var io = socketio.listen(serverConfig.port);
 
 
 io.sockets.on('connection', function (socket) {
