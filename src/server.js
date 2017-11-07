@@ -14,17 +14,17 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('leave-room', function (username) {
 		socket.leave(room, function(err) {
-			console.log(err);
 		});
 
 	});
 
 	socket.on('chat', function (room, username, message) {
-		io.in(room).emit('message', `${getTimestamp} - ${username}: ${message}`);
+		io.in(room).emit('chat', `${getTimestamp()} - ${username}: ${message}`);
+		console.log("chat");
 	});
 
 });
 
-function getTimestamp(){
-	return moment.format('MMMM Do YYYY h:mm:ss a');
+function getTimestamp() {
+	return moment().calendar();
 }
