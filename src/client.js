@@ -17,7 +17,8 @@ socket.on('connect', function (data) {
 	joinHandler(room);
 	rl.prompt(true);
 	rl.on('line', function (message) {
-		socket.emit('chat', room, username, message);
+		messageHandler(message);
+		//socket.emit('chat', room, username, message);
 		rl.prompt(true);
 	});
 });
@@ -30,14 +31,26 @@ socket.on('join-room', function (data) {
 	console_out(data);
 });
 
+socket.on('leave-room', function (data) {
+	console_out(data);
+});
+
 
 //event handlers
 function joinHandler(room) {
 	socket.emit('join-room', room, username);
 }
 
+function leaveHandler() {
+	socket.emit('leave-room', room, username);
+	process.exit();
+}
+
 function messageHandler(message) {
 	switch (message) {
+		case '/quit':
+			leaveHandler();
+			break;
 
 		default:
 			socket.emit('chat', room, username, message);
