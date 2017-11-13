@@ -36,6 +36,7 @@ socket.on('leave-room', function (data) {
 });
 
 
+
 //event handlers
 function joinHandler(room) {
 	socket.emit('join-room', room, username);
@@ -46,6 +47,13 @@ function leaveHandler() {
 	process.exit();
 }
 
+/*
+TODO:
+	refactor chat commands maybe?
+	chat commands to: change name
+					  join diff room
+					  private message?
+*/
 function messageHandler(message) {
 	switch (message) {
 		case '/quit':
